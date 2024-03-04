@@ -1,0 +1,104 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+
+    <section id="catalog" class="container mt-4">
+        <div class="catalog">
+            <h2>
+                <center>Book Catalog</center>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="book1">
+                <div class="card">
+                    <img src="{% static 'images\book1.jpg' %}" class="card-img-top" alt="Book Cover" height="480px">
+                    <div class="card-body">
+                        <h3 class="card-title">IT ENDS WITH US</h3>
+                        <p class="card-text">Author: Collen Hover</p>
+                        <a href="readmore.html">
+                            <button class="btn btn-primary">Read Now</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="book2">
+                <div class="card">
+                    <img src="{% static '\images\book2.jpg' %}" class="card-img-top" alt="Book Cover" height="480px">
+                    <div class="card-body">
+                        <h3 class="card-title">IT STARTS WITH US</h3>
+                        <p class="card-text">Author: Collen Hover</p>
+                        <a href="readmore.html"></a>
+                        <button class="btn btn-primary">Read Now</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="zoom">
+                <div class="card">
+                    <img src="{% static '\images\book3.jpg' %}" class="card-img-top" alt="Book Cover" height="480px">
+                    <div class="card-body">
+                        <h3 class="card-title">Death Note</h3>
+                        <p class="card-text">Author: Tsugumi Ohba</p>
+                        <button class="btn btn-primary" href="">Read Now</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="zoom">
+                <div class="card">
+                    <img src="{% static '\images\book4.jpg' %}" class="card-img-top" alt="Book Cover" height="480px">
+                    <div class="card-body">
+                        <h3 class="card-title">SOUL</h3>
+                        <p class="card-text">Author: OLIVIA WILSON </p>
+                        <button class="btn btn-primary" href="">Read Now</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="zoom">
+                <div class="card">
+                    <img src="{% static '\images\book5.jpg' %}" class="card-img-top" alt="Book Cover" height="480px">
+                    <div class="card-body">
+                        <h3 class="card-title">Memory</h3>
+                        <p class="card-text">Author: Angelina Aludo</p>
+                        <button class="btn btn-primary" href="">Read Now</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="zoom">
+                <div class="card">
+                    <img src="{% static '\images\book6.jpg' %}" class="card-img-top" alt="Book Cover" height="480px">
+                    <div class="card-body">
+                        <h3 class="card-title">The part is rising</h3>
+                        <p class="card-text">Author: Kathryn bywaters</p>
+                        <button class="btn btn-primary" href="">Read Now</button>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Add more books as needed -->
+        </div>
+    </section>
+    <div class="explore">
+        <a href="explore.html">EXPLORE MORE BOOKS HERE </a>
+
+    </div>
+
+<div class="container">
+    <h2 class="mt-4">File Upload Form</h2>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="fileInput">Choose a file:</label>
+            <input type="file" class="form-control-file" id="fileInput" name="fileInput" accept=".txt, .pdf, .doc, .docx">
+        </div>
+        <button type="submit" class="btn btn-primary">Upload File</button>
+    </form>
+</div>
+
+
+{% endblock content %}

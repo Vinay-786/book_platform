@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Viewer</title>
+    <!-- Include Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/readmore.css' %}">
+    
+
+</head>
+
+<body>
+
+    <header class="navigationbar">
+        <h1>
+            <center>BUKTREE</center>
+        </h1>
+        <!--HamBurger Icon-->
+        <div class="bars" id="nav-action">
+            <span class="bar"> </span>
+        </div>
+
+        <!--Navbar Links-->
+        <nav id="nav">
+            <ul>
+                <li class="shape-circle circle-one"><a href="login.html">log in</a></li>
+                <li class="shape-circle circle-two"><a href="#catalog">catalog</a></li>
+                <li class="shape-circle circle-three"><a href="#">Work</a></li>
+                <li class="shape-circle circle-five">
+                    <a href="index.html">Home</a>
+                </li>
+            </ul>
+        </nav>
+
+        
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#book-description">Book Description</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#book-display">Book Display</a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+    </div>
+
+    {% block content %}
+    {% endblock content %}
+
+    <script>
+        // Function to render a specific page
+        // function renderPage(pdf, pageNum) {
+        //     pdf.getPage(pageNum).then(function (page) {
+        //         const scale = 1.5;
+        //         const viewport = page.getViewport({ scale });
+
+        //         pdfCanvas.width = viewport.width;
+        //         pdfCanvas.height = viewport.height;
+
+        //         const renderContext = {
+        //             canvasContext: ctx,
+        //             viewport: viewport
+        //         };
+
+        //         page.render(renderContext);
+        //     });
+        // }
+
+    </script>
+
+
+    <script>
+
+
+        // Setting up the Variables
+        var bars = document.getElementById("nav-action");
+        var nav = document.getElementById("nav");
+
+
+        //setting up the listener
+        bars.addEventListener("click", barClicked, false);
+
+
+        //setting up the clicked Effect
+        function barClicked() {
+            bars.classList.toggle('active');
+            nav.classList.toggle('visible');
+        }
+    </script>
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- 
+    <script>
+        // Dummy functions for controlling pages
+        function prevPage() {
+            alert('Show previous page logic goes here.');
+        }
+
+        function nextPage() {
+            alert('Show next page logic goes here.');
+        }
+    </script> -->
+    
+
+    <footer class="bg-dark text-white text-center py-2 mt-4">
+        <p>&copy; 2024 BUKTREE All rights reserved.</p>
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+{% load static %}
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUKTREE.COM</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add custom CSS file -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- <style>
+       
+        /* .read {
+            font-size: medium;
+        } */
+    </style> -->
+
+</head>
+
+<body>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <header class="navigationbar">
+        <h1>
+            <center>BUKTREE</center>
+        </h1>
+        <!--HamBurger Icon-->
+        <div class="bars" id="nav-action">
+            <span class="bar"> </span>
+        </div>
+
+        <!--Navbar Links-->
+        <nav id="nav">
+            <ul>
+            {% if user.is_authenticated %}
+                <li class="shape-circle circle-one">
+                <form id="logoutForm" method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <a href="#" onclick="document.getElementById('logoutForm').submit();">logout</a>
+                </form> </li>
+            {% else %}
+                <li class="shape-circle circle-one">
+                    <a href="{% url 'registeruser' %}">Sign up</a></li>
+                <li class="shape-circle circle-two">
+                    <a href="{% url 'login' %}">Log In</a></li>
+            {% endif %}
+                <li class="shape-circle circle-three"><a href="#">Contact Us</a></li>
+                <li class="shape-circle circle-five">
+                    <a href="{% url 'index' %}">Home</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!--Main Body Content-->
+        <article class="container">
+            <h1 class="read">A<br> DESI PLATFORM FOR DESI WRITERES </h1>
+
+           
+        </article>
+        <a href="https://codepen.io/alexakasanjeev/pen/RPxGXY" target="_blank"></a>
+    </header>
+
+    <section id="home" class="description">
+        <p>
+            <centre>Welcome to BUKTREE, a digital sanctuary crafted exclusively for book enthusiasts like
+                you! Dive into a realm where captivating stories, literary wonders, and boundless possibilities await.
+                Regardless of whether you're a devoted bookworm, a casual browser, or an avid reader, we've curated
+                something special just for you.
+            </centre>
+            Discover a world of books and reading enjoyment.
+        </p>
+    </section>
+
+    {% block content %}
+    {% endblock content %}
+
+
+    <footer class="bg-dark text-white text-center py-2 mt-4">
+        <p>&copy; 2024 BUKTREE All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+    <script>
+
+        // Setting up the Variables
+        var bars = document.getElementById("nav-action");
+        var nav = document.getElementById("nav");
+
+
+        //setting up the listener
+        bars.addEventListener("click", barClicked, false);
+
+
+        //setting up the clicked Effect
+        function barClicked() {
+            bars.classList.toggle('active');
+            nav.classList.toggle('visible');
+        }
+
+    </script>
+
+</html>
