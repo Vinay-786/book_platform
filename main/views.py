@@ -6,9 +6,9 @@ def index(request):
 
 
 def readmore(request, book_id):
-    books = Book.object.get(pk=book_id)
+    books = Book.objects.get(pk=book_id)
     return render(request, "readmoreTempl/readmore.html",{
-        "book": books
+        "books": books
         })
 
 def explore(request):

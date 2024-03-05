@@ -52,8 +52,42 @@
     </nav>
     </div>
 
-    {% block content %}
-    {% endblock content %}
+    <h2 class="titleofbook">{{ books.title }}</h2>
+    <section>
+        <div class="book-controls">
+
+            <!-- <img id="book-image" src="\images\book1.jpg" alt="Book Image"> -->
+            <div class="book-description">
+                <h2>Book Description</h2>
+                <br>
+                <p>{{ books.book_description }}</p>
+            </div>
+            <div>
+                <img src="{{ books.image.url }}">
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container">
+        <div class="social-section">
+            <a href="{{ books.file_upload.url }}" download-class='download-btnS' button
+                class="btn btn-primary social-btn">Download</a>
+            <button class="btn btn-success social-btn">Likes</button>
+            <button class="btn btn-info social-btn">Share on Social Media</button>
+            <button class="btn btn-warning social-btn">Comments</button>
+            <!-- like button logics testing -->
+            <br>
+
+        </div>
+    </div>
+    <div>
+        {% if books.file_upload %}
+            <a href="{{ books.file_upload.url }}" target="_blank">Download File</a>
+        {% else %}
+            <p>No file uploaded.</p>
+        {% endif %}
+    </div>
 
     <script>
         // Function to render a specific page
