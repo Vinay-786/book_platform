@@ -71,8 +71,12 @@
 
     <div class="container">
         <div class="social-section">
-            <a href="{{ books.file_upload.url }}" download-class='download-btnS' button
-                class="btn btn-primary social-btn">Download</a>
+            {% if books.file_upload %}
+                <a href="{{ books.file_upload.url }}" download-class='download-btnS' button
+                class="btn btn-primary social-btn target="_blank">Download File</a>
+            {% else %}
+                <p>No file uploaded.</p>
+            {% endif %}
             <button class="btn btn-success social-btn">Likes</button>
             <button class="btn btn-info social-btn">Share on Social Media</button>
             <button class="btn btn-warning social-btn">Comments</button>
@@ -82,11 +86,6 @@
         </div>
     </div>
     <div>
-        {% if books.file_upload %}
-            <a href="{{ books.file_upload.url }}" target="_blank">Download File</a>
-        {% else %}
-            <p>No file uploaded.</p>
-        {% endif %}
     </div>
 
     <script>

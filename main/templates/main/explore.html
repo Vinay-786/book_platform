@@ -1,5 +1,13 @@
-<h1> All book </h1>
-{% for book in books %}
-<li> <a href="{% url 'readmore' book.id %}">{{ book.title }} </a>
-    <br>
-{% endfor %}
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+
+<div style="width: 800px; margin: 0; auto;">
+    <h1> All book </h1>
+    {% for book in books %}
+    <li> <a href="{% url 'readmore' book.id %}">{{ book.title }} </a>
+        <br>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -2,7 +2,16 @@ from django.shortcuts import render
 from .models import Book
 
 def index(request):
-    return render(request, 'main/index.html')
+    context = {
+        "book7": Book.objects.get(pk=7).file_upload.url,
+        "book6": Book.objects.get(pk=6).file_upload.url,
+        "book5": Book.objects.get(pk=5).file_upload.url,
+        "book4": Book.objects.get(pk=4).file_upload.url,
+        "book3": Book.objects.get(pk=3).file_upload.url,
+        "book2": Book.objects.get(pk=2).file_upload.url,
+            }
+
+    return render(request, 'main/index.html', context)
 
 
 def readmore(request, book_id):

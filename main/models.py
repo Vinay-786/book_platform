@@ -9,7 +9,7 @@ class Book(models.Model):
     likes = models.IntegerField(null=True)
     image = models.ImageField(default='default.jpg', upload_to='book_images')
     book_description = models.TextField(null=True)
-    file_upload = models.FileField(upload_to="upload", null=True)
+    file_upload = models.FileField(upload_to="upload/", null=True)
 
     def __str__(self):
           return f"{self.title}"

@@ -15,7 +15,7 @@
                     <div class="card-body">
                         <h3 class="card-title">IT ENDS WITH US</h3>
                         <p class="card-text">Author: Collen Hover</p>
-                        <a href="readmore.html">
+                        <a href={{ book7 }}>
                             <button class="btn btn-primary">Read Now</button>
                         </a>
                     </div>
@@ -28,8 +28,9 @@
                     <div class="card-body">
                         <h3 class="card-title">IT STARTS WITH US</h3>
                         <p class="card-text">Author: Collen Hover</p>
-                        <a href="readmore.html"></a>
-                        <button class="btn btn-primary">Read Now</button>
+                        <a href={{ book2 }}>
+                            <button class="btn btn-primary">Read Now</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -40,8 +41,9 @@
                     <div class="card-body">
                         <h3 class="card-title">Death Note</h3>
                         <p class="card-text">Author: Tsugumi Ohba</p>
-                        <button class="btn btn-primary" href="">Read Now</button>
-
+                        <a href={{ book3 }}>
+                            <button class="btn btn-primary">Read Now</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -52,8 +54,9 @@
                     <div class="card-body">
                         <h3 class="card-title">SOUL</h3>
                         <p class="card-text">Author: OLIVIA WILSON </p>
-                        <button class="btn btn-primary" href="">Read Now</button>
-
+                        <a href={{ book4 }}>
+                            <button class="btn btn-primary">Read Now</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -64,8 +67,9 @@
                     <div class="card-body">
                         <h3 class="card-title">Memory</h3>
                         <p class="card-text">Author: Angelina Aludo</p>
-                        <button class="btn btn-primary" href="">Read Now</button>
-
+                        <a href={{ book5 }}>
+                            <button class="btn btn-primary">Read Now</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -76,8 +80,9 @@
                     <div class="card-body">
                         <h3 class="card-title">The part is rising</h3>
                         <p class="card-text">Author: Kathryn bywaters</p>
-                        <button class="btn btn-primary" href="">Read Now</button>
-
+                        <a href={{ book6 }}>
+                            <button class="btn btn-primary">Read Now</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -85,11 +90,11 @@
         </div>
     </section>
     <div class="explore">
-        <a href="explore.html">EXPLORE MORE BOOKS HERE </a>
+        <a href="{% url 'explore' %}">EXPLORE MORE BOOKS HERE </a>
 
     </div>
 
-<div class="container">
+<!-- <div class="container">
     <h2 class="mt-4">File Upload Form</h2>
     <form action="upload.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
@@ -98,7 +103,5 @@
         </div>
         <button type="submit" class="btn btn-primary">Upload File</button>
     </form>
-</div>
-
-
+</div> -->
 {% endblock content %}
